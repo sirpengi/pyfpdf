@@ -270,9 +270,9 @@ class HTML2FPDF(HTMLParser):
                 if self.align and self.align[0].upper() == 'C':
                     x = (self.pdf.w-x)/2.0 - w/2.0
                 self.pdf.image(self.image_map(attrs['src']),
-                               x, y, w, h, link=self.href)
+                               x, None, w, h, link=self.href)
                 self.pdf.set_x(x+w)
-                self.pdf.set_y(y+h)
+                #self.pdf.set_y(y+h)
         if tag=='b' or tag=='i' or tag=='u':
             self.set_style(tag, True)
         if tag=='center':
